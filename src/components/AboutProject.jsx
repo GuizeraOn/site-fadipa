@@ -156,14 +156,25 @@ export default function AboutProject() {
                 </div>
               </div>
 
-              {/* Right Side: Prominent 3:4 Portrait Photo Placeholder */}
-              <div className="shrink-0 w-28 sm:w-36 aspect-[3/4] rounded-2xl overflow-hidden relative shadow-sm border-2 border-slate-200 group-hover:border-clinic-300 bg-gradient-to-b from-slate-100 via-slate-50 to-slate-200/90 flex flex-col items-center justify-center text-center p-2.5 sm:p-3 transition-colors">
+              {/* Right Side: Prominent 3:4 Portrait Photo */}
+              <div
+                className={`shrink-0 w-28 sm:w-36 aspect-[3/4] rounded-2xl overflow-hidden relative shadow-sm border-2 border-slate-200 group-hover:border-clinic-300 bg-gradient-to-b from-slate-100 via-slate-50 to-slate-200/90 flex flex-col items-center justify-center text-center transition-colors ${
+                  student.photo ? '' : 'p-2.5 sm:p-3'
+                }`}
+              >
                 {student.photo ? (
-                  <img
-                    src={student.photo}
-                    alt={student.name}
-                    className="w-full h-full object-cover rounded-xl"
-                  />
+                  <div className="relative w-full h-full">
+                    <img
+                      src={student.photo}
+                      alt={student.name}
+                      className="w-full h-full object-cover object-center"
+                      loading="lazy"
+                    />
+                    {/* Corner Tooth Stamp */}
+                    <div className="absolute top-1.5 right-1.5 sm:top-2 sm:right-2 w-5 h-5 rounded-full bg-white/90 backdrop-blur-xs text-clinic-700 flex items-center justify-center text-[10px] shadow-xs border border-slate-200/80">
+                      🦷
+                    </div>
+                  </div>
                 ) : (
                   <div className="flex flex-col items-center justify-center text-center h-full w-full select-none">
                     {/* Camera / User Icon */}
