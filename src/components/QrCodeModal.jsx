@@ -96,7 +96,7 @@ export default function QrCodeModal({ isOpen, onClose }) {
             {/* Footer */}
             <div className="p-4 border-t border-slate-100 bg-slate-50 flex items-center justify-center">
               <span className="text-xs text-slate-400 font-medium">
-                FADIPA 2025 • Odontologia Sem Mitos
+                FADIPA 2026 • Odontologia Sem Mitos
               </span>
             </div>
           </motion.div>

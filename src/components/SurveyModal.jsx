@@ -237,7 +237,7 @@ export default function SurveyModal({ isOpen, onClose }) {
             {/* Footer */}
             <div className="p-4 border-t border-slate-100 bg-slate-50 flex items-center justify-between">
               <span className="text-xs text-slate-400">
-                FADIPA • Projeto de Extensão 2025
+                FADIPA • Projeto de Extensão 2026
               </span>
               <button
                 onClick={onClose}

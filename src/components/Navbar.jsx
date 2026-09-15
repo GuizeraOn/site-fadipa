@@ -140,7 +140,7 @@ export default function Navbar({ onOpenSurvey }) {
             <div className="flex items-center gap-2 pb-2 mb-2 border-b border-slate-100 text-xs text-slate-500 font-medium">
               <span>⏱️ {PROJECT_CONFIG.readingTime}</span>
               <span>•</span>
-              <span>Extensão FADIPA 2025</span>
+              <span>Extensão FADIPA 2026</span>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-1">
               {navLinks.map((link) => (

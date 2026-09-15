@@ -34,7 +34,7 @@ export default function Hero({ onOpenSurvey }) {
           </span>
           <span className="inline-flex items-center gap-1 px-3 py-1.5 rounded-full text-xs font-medium bg-dental-50 text-dental-800 border border-dental-200">
             <Sparkles className="w-3.5 h-3.5 text-dental-600" />
-            Projeto de Extensão FADIPA 2025
+            Projeto de Extensão FADIPA 2026
           </span>
         </motion.div>
 

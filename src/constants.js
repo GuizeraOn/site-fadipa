@@ -1,13 +1,14 @@
-// Configurações e Dados do Projeto Sorriso Consciente - FADIPA 2025
+// Configurações e Dados do Projeto Sorriso Consciente - FADIPA 2026
 
 export const PROJECT_CONFIG = {
   name: "Sorriso Consciente",
   tagline: "Cárie: Menos é Mais — Odontologia Sem Mitos",
   institution: "FADIPA",
-  institutionFull: "Faculdade de Odontologia de Ipatinga (FADIPA)",
-  course: "Graduação em Odontologia",
-  discipline: "Projeto de Extensão Universitária em Saúde Coletiva e Dentística Restauradora",
-  year: "2025",
+  institutionFull: "Faculdade de Ipatinga (FADIPA)",
+  course: "Curso de Odontologia",
+  period: "4º Período",
+  discipline: "Dentística",
+  year: "2026",
   readingTime: "3 min de leitura",
   // Insira o link real do Google Forms aqui
   formsUrl: "https://docs.google.com/forms/d/e/1FAIpQLSc-exemplo-sorriso-consciente/viewform",
@@ -176,19 +177,59 @@ export const SCIENTIFIC_STUDIES = [
   }
 ];
 
-export const TEAM_MEMBERS = [
+export const ADVISOR = {
+  category: "ORIENTAÇÃO ACADÊMICA",
+  name: "Profa. Maria Letícia",
+  role: "Orientadora do Projeto",
+  institution: "Faculdade de Ipatinga (FADIPA)",
+  discipline: "Componente Curricular: Dentística",
+  badge: "Supervisão Docente",
+  initials: "ML",
+};
+
+export const STUDENTS = [
   {
-    name: "Equipe de Odontologia FADIPA",
-    role: "Pesquisadores & Acadêmicos",
-    period: "Projeto de Extensão 2025",
-    description: "Estudantes e orientadores comprometidos em traduzir evidências científicas de ponta em saúde pública acessível para a comunidade do Vale do Aço.",
-    badge: "Extensão Universitária"
+    name: "Guilherme Medeiros",
+    role: "Discente",
+    period: "4º Período — Odontologia",
+    course: "Odontologia",
+    initials: "GM",
+    accentColor: "from-clinic-500 to-clinic-600",
+    borderColor: "border-clinic-300",
+    avatarBg: "bg-clinic-50 text-clinic-700",
   },
   {
-    name: "Coordenação & Docência",
-    role: "Orientação Acadêmica",
-    period: "FADIPA Ipatinga",
-    description: "Supervisão pedagógica e científica garantindo conformidade com as diretrizes da IADR e Odontologia Baseada em Evidências.",
-    badge: "Supervisão Docente"
-  }
+    name: "Leandro Santos",
+    role: "Discente",
+    period: "4º Período — Odontologia",
+    course: "Odontologia",
+    initials: "LS",
+    accentColor: "from-dental-500 to-dental-600",
+    borderColor: "border-dental-300",
+    avatarBg: "bg-dental-50 text-dental-700",
+  },
+  {
+    name: "Lívia Lacerda",
+    role: "Discente",
+    period: "4º Período — Odontologia",
+    course: "Odontologia",
+    initials: "LL",
+    accentColor: "from-emerald-500 to-emerald-600",
+    borderColor: "border-emerald-300",
+    avatarBg: "bg-emerald-50 text-emerald-700",
+  },
+  {
+    name: "Melissa Costa",
+    role: "Discente",
+    period: "4º Período — Odontologia",
+    course: "Odontologia",
+    initials: "MC",
+    accentColor: "from-sky-500 to-sky-600",
+    borderColor: "border-sky-300",
+    avatarBg: "bg-sky-50 text-sky-700",
+  },
 ];
+
+export const MOTIVATION_QUOTE =
+  "Escolhemos o tema Remoção Seletiva do Tecido Cariado porque acreditamos que informação de qualidade transforma a relação das pessoas com sua saúde bucal. Nosso objetivo foi traduzir a ciência para a linguagem do dia a dia, mostrando que tratamentos mais conservadores também são seguros e eficazes.";
+

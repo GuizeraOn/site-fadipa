@@ -1,6 +1,6 @@
 # 🦷 Sorriso Consciente — Cárie: Menos é Mais
 
-> **Projeto de Extensão Universitária — FADIPA 2025**  
+> **Projeto de Extensão Universitária — FADIPA 2026**  
 > Divulgação Científica e Popularização da Odontologia Minimamente Invasiva: Remoção Seletiva de Cárie em Cavidades Profundas.
 
 ---
@@ -59,5 +59,5 @@ O **Sorriso Consciente** é uma plataforma educativa desenvolvida por discentes 
 
 - **Instituição:** Faculdade de Direito e Odontologia de Ipatinga — FADIPA
 - **Curso:** Graduação em Odontologia
-- **Ano:** 2025
+- **Ano:** 2026
 
