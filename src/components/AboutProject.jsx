@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { GraduationCap, Award, BookOpen, Heart, Sparkles, Building2, UserCheck, ShieldCheck } from 'lucide-react';
+import { GraduationCap, Award, BookOpen, Heart, Sparkles, Building2, UserCheck, ShieldCheck, Camera } from 'lucide-react';
 import { PROJECT_CONFIG, ADVISOR, STUDENTS, MOTIVATION_QUOTE } from '../constants';
 
 export default function AboutProject() {
@@ -106,8 +106,8 @@ export default function AboutProject() {
           </span>
         </div>
 
-        {/* 10.3 — Grid dos Discentes (Fotos Circulares / 4 Colunas no Desktop, 2 no Tablet, 1 no Mobile) */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+        {/* 10.3 — Grid dos Discentes (Cards com Texto à Esquerda e Foto 3:4 em Destaque à Direita) */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16">
           {STUDENTS.map((student, idx) => (
             <motion.div
               key={student.name}
@@ -115,40 +115,75 @@ export default function AboutProject() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-40px" }}
               transition={{ duration: 0.45, delay: idx * 0.1, ease: "easeOut" }}
-              whileHover={{ y: -6, transition: { duration: 0.2 } }}
-              className="bg-white rounded-3xl p-6 border border-slate-200/90 shadow-xs hover:shadow-lg hover:border-clinic-300 transition-all flex flex-col items-center text-center group"
+              whileHover={{ y: -5, transition: { duration: 0.2 } }}
+              className="bg-white rounded-3xl p-5 sm:p-6 border border-slate-200/90 shadow-xs hover:shadow-md hover:border-clinic-300 transition-all flex flex-col sm:flex-row items-center sm:items-stretch justify-between gap-5 group text-left"
             >
-              {/* Circular Photo / Avatar with Identity Border */}
-              <div className="relative mb-5">
-                <div className={`w-24 h-24 rounded-full p-1 border-2 ${student.borderColor} bg-white shadow-md group-hover:scale-105 transition-transform flex items-center justify-center`}>
-                  <div className={`w-full h-full rounded-full bg-gradient-to-tr ${student.accentColor} text-white font-extrabold text-2xl flex items-center justify-center shadow-inner select-none`}>
-                    {student.initials}
+              {/* Left Side: Information aligned to left */}
+              <div className="flex-1 flex flex-col justify-between w-full">
+                <div>
+                  <div className="flex items-center gap-2 mb-2.5">
+                    <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-xs font-bold bg-clinic-50 text-clinic-700 border border-clinic-200">
+                      {student.role}
+                    </span>
+                    <span className="text-[11px] font-semibold text-slate-400">
+                      4º Período
+                    </span>
+                  </div>
+
+                  {/* Student Full Name */}
+                  <h3 className="font-extrabold text-slate-900 text-lg sm:text-xl leading-snug group-hover:text-clinic-700 transition-colors">
+                    {student.name}
+                  </h3>
+
+                  {/* Academic Details */}
+                  <div className="mt-2 space-y-1 text-xs text-slate-500">
+                    <p className="font-semibold text-slate-700">
+                      {student.period}
+                    </p>
+                    <p className="text-slate-500">
+                      Componente: <strong className="text-slate-700">Dentística</strong>
+                    </p>
+                    <p className="text-slate-400 text-[11px]">
+                      Faculdade de Ipatinga (FADIPA)
+                    </p>
                   </div>
                 </div>
-                <div className="absolute bottom-0 right-0 w-6 h-6 rounded-full bg-clinic-600 text-white flex items-center justify-center text-[10px] font-bold border-2 border-white shadow-xs">
-                  🦷
+
+                {/* Bottom Card Tag */}
+                <div className="mt-5 pt-3 border-t border-slate-100 flex items-center gap-1.5 text-[11px] font-medium text-clinic-600">
+                  <UserCheck className="w-3.5 h-3.5" />
+                  <span>Projeto de Extensão 2026</span>
                 </div>
               </div>
 
-              {/* Student Name */}
-              <h3 className="font-extrabold text-slate-900 text-base sm:text-lg mb-1 group-hover:text-clinic-700 transition-colors">
-                {student.name}
-              </h3>
+              {/* Right Side: Prominent 3:4 Portrait Photo Placeholder */}
+              <div className="shrink-0 w-32 sm:w-36 aspect-[3/4] rounded-2xl overflow-hidden relative shadow-sm border-2 border-slate-200 group-hover:border-clinic-300 bg-gradient-to-b from-slate-100 via-slate-50 to-slate-200/90 flex flex-col items-center justify-center text-center p-3 transition-colors">
+                {student.photo ? (
+                  <img
+                    src={student.photo}
+                    alt={student.name}
+                    className="w-full h-full object-cover rounded-xl"
+                  />
+                ) : (
+                  <div className="flex flex-col items-center justify-center text-center h-full w-full select-none">
+                    {/* Camera / User Icon */}
+                    <div className="w-11 h-11 rounded-2xl bg-white/90 border border-slate-200/90 shadow-xs flex items-center justify-center text-slate-400 group-hover:text-clinic-600 group-hover:scale-105 transition-all mb-2">
+                      <Camera className="w-5 h-5" />
+                    </div>
 
-              {/* Role Badge */}
-              <span className="inline-block text-xs font-semibold px-2.5 py-0.5 rounded-full bg-slate-100 text-slate-700 border border-slate-200/80 mb-2">
-                {student.role}
-              </span>
+                    <span className="text-xs font-bold text-slate-700 leading-tight">
+                      Foto do Aluno
+                    </span>
+                    <span className="text-[10px] font-mono font-medium text-slate-400 mt-1 px-1.5 py-0.5 rounded bg-white/80 border border-slate-200/80">
+                      3:4
+                    </span>
 
-              {/* Course and Period */}
-              <div className="text-xs text-slate-500 font-medium">
-                {student.period}
-              </div>
-
-              {/* Bottom Card Footer */}
-              <div className="mt-5 pt-3 border-t border-slate-100 w-full text-[11px] font-medium text-clinic-600 flex items-center justify-center gap-1">
-                <UserCheck className="w-3.5 h-3.5" />
-                <span>Extensão FADIPA 2026</span>
+                    {/* Corner Tooth Stamp */}
+                    <div className="absolute top-2 right-2 w-5 h-5 rounded-full bg-white text-clinic-700 flex items-center justify-center text-[10px] shadow-xs border border-slate-200">
+                      🦷
+                    </div>
+                  </div>
+                )}
               </div>
             </motion.div>
           ))}
