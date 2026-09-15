@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowRight, MessageSquareCheck, X } from 'lucide-react';
+import { PROJECT_CONFIG } from '../constants';
 
-export default function FloatingCta({ onOpenSurvey }) {
+export default function FloatingCta() {
   const [isVisible, setIsVisible] = useState(false);
   const [isDismissed, setIsDismissed] = useState(false);
 
@@ -49,15 +50,17 @@ export default function FloatingCta({ onOpenSurvey }) {
             </div>
 
             <div className="flex items-center gap-1.5 shrink-0">
-              <motion.button
+              <motion.a
+                href={PROJECT_CONFIG.formsUrl}
+                target="_blank"
+                rel="noopener noreferrer"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                onClick={onOpenSurvey}
                 className="inline-flex items-center gap-1 bg-gradient-to-r from-clinic-500 to-dental-400 hover:from-clinic-600 hover:to-dental-500 text-slate-950 font-extrabold text-xs px-3.5 py-2 rounded-xl transition-all shadow-sm"
               >
                 <span>Responder</span>
                 <ArrowRight className="w-3 h-3" />
-              </motion.button>
+              </motion.a>
 
               <button
                 onClick={() => setIsDismissed(true)}

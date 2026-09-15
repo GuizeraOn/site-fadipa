@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { ArrowDown, ShieldCheck, HeartPulse, Sparkles, AlertCircle, CheckCircle2 } from 'lucide-react';
 import { PROJECT_CONFIG } from '../constants';
 
-export default function Hero({ onOpenSurvey }) {
+export default function Hero() {
   return (
     <section className="relative pt-28 pb-20 md:pt-36 md:pb-28 overflow-hidden bg-gradient-to-b from-clinic-50/70 via-white to-slate-50">
       {/* Dynamic Background Floating Blur Blobs */}
@@ -87,8 +87,10 @@ export default function Hero({ onOpenSurvey }) {
             </motion.div>
           </motion.a>
 
-          <motion.button
-            onClick={onOpenSurvey}
+          <motion.a
+            href={PROJECT_CONFIG.formsUrl}
+            target="_blank"
+            rel="noopener noreferrer"
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
             className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-white hover:bg-slate-50 text-slate-700 font-semibold px-6 py-3.5 rounded-xl border border-slate-300/90 shadow-xs hover:border-slate-400 transition-colors text-sm sm:text-base"
@@ -97,7 +99,7 @@ export default function Hero({ onOpenSurvey }) {
             <span className="text-xs bg-dental-100 text-dental-800 px-2 py-0.5 rounded-full font-bold">
               Opine!
             </span>
-          </motion.button>
+          </motion.a>
         </motion.div>
 
         {/* 3 Scientific Badges with Staggered Fade Up */}

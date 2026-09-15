@@ -10,8 +10,8 @@ export const PROJECT_CONFIG = {
   discipline: "Dentística",
   year: "2026",
   readingTime: "3 min de leitura",
-  // Insira o link real do Google Forms aqui
-  formsUrl: "https://docs.google.com/forms/d/e/1FAIpQLSc-exemplo-sorriso-consciente/viewform",
+  // Link real do Google Forms da pesquisa
+  formsUrl: "https://forms.gle/PVZ9m9zW6f1XQ8xY6",
 };
 
 export const MYTHS_AND_TRUTHS = [

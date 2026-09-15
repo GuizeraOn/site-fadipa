@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Menu, X, ArrowRight, BookOpen, Sparkles, ExternalLink } from 'lucide-react';
 import { PROJECT_CONFIG } from '../constants';
 
-export default function Navbar({ onOpenSurvey }) {
+export default function Navbar() {
   const [scrollProgress, setScrollProgress] = useState(0);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
@@ -114,14 +114,16 @@ export default function Navbar({ onOpenSurvey }) {
               <span>{PROJECT_CONFIG.readingTime}</span>
             </div>
 
-            {/* Direct Form CTA */}
-            <button
-              onClick={onOpenSurvey}
+            {/* Direct Form Link */}
+            <a
+              href={PROJECT_CONFIG.formsUrl}
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center gap-2 bg-gradient-to-r from-clinic-600 to-dental-600 hover:from-clinic-700 hover:to-dental-700 text-white text-xs sm:text-sm font-semibold px-3.5 sm:px-4 py-2 rounded-xl shadow-sm shadow-clinic-600/20 hover:shadow-md transition-all active:scale-95"
             >
               <span>Questionário</span>
               <ArrowRight className="w-3.5 h-3.5" />
-            </button>
+            </a>
 
             {/* Mobile Menu Toggle */}
             <button
@@ -155,16 +157,16 @@ export default function Navbar({ onOpenSurvey }) {
               ))}
             </div>
             <div className="pt-3">
-              <button
-                onClick={() => {
-                  setMobileMenuOpen(false);
-                  onOpenSurvey();
-                }}
-                className="w-full flex items-center justify-center gap-2 bg-clinic-600 text-white font-semibold text-sm py-2.5 rounded-xl shadow-sm"
+              <a
+                href={PROJECT_CONFIG.formsUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => setMobileMenuOpen(false)}
+                className="w-full flex items-center justify-center gap-2 bg-clinic-600 hover:bg-clinic-700 text-white font-semibold text-sm py-2.5 rounded-xl shadow-sm transition-colors"
               >
                 <span>Responder Questionário de Opinião</span>
                 <ArrowRight className="w-4 h-4" />
-              </button>
+              </a>
             </div>
           </div>
         )}

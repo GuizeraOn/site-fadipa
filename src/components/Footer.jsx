@@ -2,7 +2,7 @@ import React from 'react';
 import { ArrowRight, QrCode, BookOpen, Heart, ExternalLink, ShieldCheck } from 'lucide-react';
 import { PROJECT_CONFIG } from '../constants';
 
-export default function Footer({ onOpenSurvey, onOpenReferences, onOpenQr }) {
+export default function Footer({ onOpenReferences, onOpenQr }) {
   return (
     <footer className="bg-slate-900 text-slate-300 pt-16 pb-12 border-t border-slate-800">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -19,13 +19,15 @@ export default function Footer({ onOpenSurvey, onOpenReferences, onOpenQr }) {
               Sua resposta leva menos de 2 minutos e é anônima. Ajude a validar nosso projeto de extensão da FADIPA!
             </p>
           </div>
-          <button
-            onClick={onOpenSurvey}
+          <a
+            href={PROJECT_CONFIG.formsUrl}
+            target="_blank"
+            rel="noopener noreferrer"
             className="shrink-0 inline-flex items-center gap-2 bg-dental-400 hover:bg-dental-300 text-slate-950 font-bold px-6 py-3 rounded-xl transition-all shadow-lg active:scale-95 text-sm"
           >
             <span>Responder Agora</span>
             <ArrowRight className="w-4 h-4" />
-          </button>
+          </a>
         </div>
 
         {/* Main Footer Links & Info */}

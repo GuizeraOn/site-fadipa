@@ -14,26 +14,23 @@ import Footer from './components/Footer';
 import FloatingCta from './components/FloatingCta';
 import ReferencesModal from './components/ReferencesModal';
 import QrCodeModal from './components/QrCodeModal';
-import SurveyModal from './components/SurveyModal';
 
 export default function App() {
-  const [isSurveyModalOpen, setIsSurveyModalOpen] = useState(false);
   const [isReferencesModalOpen, setIsReferencesModalOpen] = useState(false);
   const [isQrModalOpen, setIsQrModalOpen] = useState(false);
 
-  const handleOpenSurvey = () => setIsSurveyModalOpen(true);
   const handleOpenReferences = () => setIsReferencesModalOpen(true);
   const handleOpenQr = () => setIsQrModalOpen(true);
 
   return (
     <div className="min-h-screen bg-slate-50 text-slate-800 flex flex-col selection:bg-clinic-500 selection:text-white">
       {/* Pinned Header with Reading Progress */}
-      <Navbar onOpenSurvey={handleOpenSurvey} />
+      <Navbar />
 
       {/* Main Content Sections */}
       <main className="flex-1">
         {/* 1. Hero */}
-        <Hero onOpenSurvey={handleOpenSurvey} />
+        <Hero />
 
         {/* 2. O que é cárie? (Contextualização e camadas) */}
         <ToothAnatomy />
@@ -57,28 +54,22 @@ export default function App() {
         <ScienceSection onOpenReferences={handleOpenReferences} />
 
         {/* 9. Chamada para o Formulário (CTA de destaque) */}
-        <SurveyCta onOpenSurvey={handleOpenSurvey} />
+        <SurveyCta />
 
-        {/* 10. Sobre Nós / Sobre o Projeto (FADIPA Extensão 2025) */}
+        {/* 10. Sobre Nós / Sobre o Projeto (FADIPA Extensão 2026) */}
         <AboutProject />
       </main>
 
       {/* 11. Rodapé */}
       <Footer
-        onOpenSurvey={handleOpenSurvey}
         onOpenReferences={handleOpenReferences}
         onOpenQr={handleOpenQr}
       />
 
       {/* Smart Bottom Floating CTA (aparece após rolar a página) */}
-      <FloatingCta onOpenSurvey={handleOpenSurvey} />
+      <FloatingCta />
 
       {/* Modals */}
-      <SurveyModal
-        isOpen={isSurveyModalOpen}
-        onClose={() => setIsSurveyModalOpen(false)}
-      />
-
       <ReferencesModal
         isOpen={isReferencesModalOpen}
         onClose={() => setIsReferencesModalOpen(false)}

@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { ArrowRight, Sparkles, CheckCircle2, Heart } from 'lucide-react';
 import { PROJECT_CONFIG } from '../constants';
 
-export default function SurveyCta({ onOpenSurvey }) {
+export default function SurveyCta() {
   return (
     <section id="questionario" className="py-24 relative overflow-hidden bg-gradient-to-br from-clinic-900 via-clinic-800 to-dental-900 text-white scroll-mt-20">
       {/* Decorative Animated Glow Elements */}
@@ -65,15 +65,17 @@ export default function SurveyCta({ onOpenSurvey }) {
           transition={{ duration: 0.5, delay: 0.2 }}
           className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-10"
         >
-          <motion.button
+          <motion.a
+            href={PROJECT_CONFIG.formsUrl}
+            target="_blank"
+            rel="noopener noreferrer"
             whileHover={{ scale: 1.04, y: -2 }}
             whileTap={{ scale: 0.97 }}
-            onClick={onOpenSurvey}
             className="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-gradient-to-r from-dental-400 to-clinic-400 hover:from-dental-300 hover:to-clinic-300 text-slate-950 text-base sm:text-lg font-black px-8 py-4 rounded-2xl shadow-xl shadow-dental-500/25 transition-all"
           >
             <span>Responder Questionário de Opinião</span>
             <ArrowRight className="w-5 h-5" />
-          </motion.button>
+          </motion.a>
         </motion.div>
 
         {/* Trust Badges */}
