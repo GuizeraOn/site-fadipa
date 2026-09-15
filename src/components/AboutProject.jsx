@@ -57,7 +57,7 @@ export default function AboutProject() {
             {/* Gold decorative accent glow */}
             <div className="absolute top-0 right-0 -mr-10 -mt-10 w-44 h-44 bg-amber-400/10 rounded-full blur-2xl pointer-events-none" />
 
-            <div className="flex flex-col sm:flex-row items-center sm:items-start gap-5 text-center sm:text-left relative z-10">
+            <div className="flex flex-row items-center sm:items-start gap-4 sm:gap-6 text-left relative z-10">
               {/* Monogram Seal "ML" with Gold Rim */}
               <div className="relative shrink-0">
                 <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-gradient-to-tr from-amber-500 via-amber-400 to-yellow-300 text-slate-950 font-black text-xl sm:text-2xl flex items-center justify-center shadow-lg ring-4 ring-amber-400/20 group-hover:scale-105 transition-transform">
@@ -75,22 +75,22 @@ export default function AboutProject() {
                   <span>{ADVISOR.category}</span>
                 </div>
 
-                <h3 className="text-xl sm:text-2xl font-black text-white tracking-tight">
+                <h3 className="text-lg sm:text-2xl font-black text-white tracking-tight">
                   {ADVISOR.name}
                 </h3>
 
-                <p className="text-sm font-semibold text-clinic-300 mt-0.5">
+                <p className="text-xs sm:text-sm font-semibold text-clinic-300 mt-0.5">
                   {ADVISOR.role}
                 </p>
 
-                <div className="mt-3 pt-3 border-t border-slate-800 text-xs text-slate-300 flex flex-wrap items-center justify-center sm:justify-start gap-3">
+                <div className="mt-3 pt-3 border-t border-slate-800 text-xs text-slate-300 flex flex-wrap items-center justify-start gap-2.5 sm:gap-3">
                   <span className="flex items-center gap-1.5">
-                    <BookOpen className="w-3.5 h-3.5 text-amber-400" />
+                    <BookOpen className="w-3.5 h-3.5 text-amber-400 shrink-0" />
                     <span>{ADVISOR.discipline}</span>
                   </span>
                   <span className="hidden sm:inline text-slate-600">•</span>
                   <span className="flex items-center gap-1.5 text-slate-400">
-                    <Building2 className="w-3.5 h-3.5" />
+                    <Building2 className="w-3.5 h-3.5 shrink-0" />
                     <span>{ADVISOR.institution}</span>
                   </span>
                 </div>
@@ -116,13 +116,13 @@ export default function AboutProject() {
               viewport={{ once: true, margin: "-40px" }}
               transition={{ duration: 0.45, delay: idx * 0.1, ease: "easeOut" }}
               whileHover={{ y: -5, transition: { duration: 0.2 } }}
-              className="bg-white rounded-3xl p-5 sm:p-6 border border-slate-200/90 shadow-xs hover:shadow-md hover:border-clinic-300 transition-all flex flex-col sm:flex-row items-center sm:items-stretch justify-between gap-5 group text-left"
+              className="bg-white rounded-3xl p-4 sm:p-6 border border-slate-200/90 shadow-xs hover:shadow-md hover:border-clinic-300 transition-all flex flex-row items-stretch justify-between gap-3.5 sm:gap-5 group text-left"
             >
               {/* Left Side: Information aligned to left */}
-              <div className="flex-1 flex flex-col justify-between w-full">
+              <div className="flex-1 min-w-0 flex flex-col justify-between">
                 <div>
-                  <div className="flex items-center gap-2 mb-2.5">
-                    <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-xs font-bold bg-clinic-50 text-clinic-700 border border-clinic-200">
+                  <div className="flex flex-wrap items-center gap-1.5 sm:gap-2 mb-2">
+                    <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-bold bg-clinic-50 text-clinic-700 border border-clinic-200">
                       {student.role}
                     </span>
                     <span className="text-[11px] font-semibold text-slate-400">
@@ -131,12 +131,12 @@ export default function AboutProject() {
                   </div>
 
                   {/* Student Full Name */}
-                  <h3 className="font-extrabold text-slate-900 text-lg sm:text-xl leading-snug group-hover:text-clinic-700 transition-colors">
+                  <h3 className="font-extrabold text-slate-900 text-base sm:text-lg md:text-xl leading-snug group-hover:text-clinic-700 transition-colors">
                     {student.name}
                   </h3>
 
                   {/* Academic Details */}
-                  <div className="mt-2 space-y-1 text-xs text-slate-500">
+                  <div className="mt-1.5 sm:mt-2 space-y-0.5 sm:space-y-1 text-xs text-slate-500">
                     <p className="font-semibold text-slate-700">
                       {student.period}
                     </p>
@@ -150,14 +150,14 @@ export default function AboutProject() {
                 </div>
 
                 {/* Bottom Card Tag */}
-                <div className="mt-5 pt-3 border-t border-slate-100 flex items-center gap-1.5 text-[11px] font-medium text-clinic-600">
-                  <UserCheck className="w-3.5 h-3.5" />
-                  <span>Projeto de Extensão 2026</span>
+                <div className="mt-3 sm:mt-5 pt-2.5 sm:pt-3 border-t border-slate-100 flex items-center gap-1.5 text-[11px] font-medium text-clinic-600">
+                  <UserCheck className="w-3.5 h-3.5 shrink-0" />
+                  <span className="truncate">Projeto de Extensão 2026</span>
                 </div>
               </div>
 
               {/* Right Side: Prominent 3:4 Portrait Photo Placeholder */}
-              <div className="shrink-0 w-32 sm:w-36 aspect-[3/4] rounded-2xl overflow-hidden relative shadow-sm border-2 border-slate-200 group-hover:border-clinic-300 bg-gradient-to-b from-slate-100 via-slate-50 to-slate-200/90 flex flex-col items-center justify-center text-center p-3 transition-colors">
+              <div className="shrink-0 w-28 sm:w-36 aspect-[3/4] rounded-2xl overflow-hidden relative shadow-sm border-2 border-slate-200 group-hover:border-clinic-300 bg-gradient-to-b from-slate-100 via-slate-50 to-slate-200/90 flex flex-col items-center justify-center text-center p-2.5 sm:p-3 transition-colors">
                 {student.photo ? (
                   <img
                     src={student.photo}
@@ -167,19 +167,19 @@ export default function AboutProject() {
                 ) : (
                   <div className="flex flex-col items-center justify-center text-center h-full w-full select-none">
                     {/* Camera / User Icon */}
-                    <div className="w-11 h-11 rounded-2xl bg-white/90 border border-slate-200/90 shadow-xs flex items-center justify-center text-slate-400 group-hover:text-clinic-600 group-hover:scale-105 transition-all mb-2">
-                      <Camera className="w-5 h-5" />
+                    <div className="w-9 h-9 sm:w-11 sm:h-11 rounded-xl sm:rounded-2xl bg-white/90 border border-slate-200/90 shadow-xs flex items-center justify-center text-slate-400 group-hover:text-clinic-600 group-hover:scale-105 transition-all mb-1.5 sm:mb-2">
+                      <Camera className="w-4 h-4 sm:w-5 sm:h-5" />
                     </div>
 
-                    <span className="text-xs font-bold text-slate-700 leading-tight">
+                    <span className="text-[11px] sm:text-xs font-bold text-slate-700 leading-tight">
                       Foto do Aluno
                     </span>
-                    <span className="text-[10px] font-mono font-medium text-slate-400 mt-1 px-1.5 py-0.5 rounded bg-white/80 border border-slate-200/80">
+                    <span className="text-[9px] sm:text-[10px] font-mono font-medium text-slate-400 mt-1 px-1.5 py-0.5 rounded bg-white/80 border border-slate-200/80">
                       3:4
                     </span>
 
                     {/* Corner Tooth Stamp */}
-                    <div className="absolute top-2 right-2 w-5 h-5 rounded-full bg-white text-clinic-700 flex items-center justify-center text-[10px] shadow-xs border border-slate-200">
+                    <div className="absolute top-1.5 right-1.5 sm:top-2 sm:right-2 w-4 h-4 sm:w-5 sm:h-5 rounded-full bg-white text-clinic-700 flex items-center justify-center text-[9px] sm:text-[10px] shadow-xs border border-slate-200">
                       🦷
                     </div>
                   </div>
